@@ -1,5 +1,6 @@
 import language_tool_python
 
+# global tool 
 tool = language_tool_python.LanguageTool('fil-PH')
 
 # need define grammar rules here!
