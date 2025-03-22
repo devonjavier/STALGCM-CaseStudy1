@@ -1,1 +1,0 @@
-# STALGCM-CaseStudy1
