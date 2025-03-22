@@ -1,0 +1,23 @@
+<rule id="LIGATURE_NA_VOWEL_MERGE" name="Incorrect 'na' after vowel-ending word" lang="tl">
+    <pattern>
+        <token regexp="yes">.*[aeiou]</token>
+        <token>na</token>
+        <token postag="NN"/>
+    </pattern>
+    <message>Kung nagtatapos sa patinig ang salita, kailangang i-dikit ang '-ng' sa huling salita (e.g., maganda + ng → magandang).</message>
+    <suggestion>\1ng \3</suggestion>
+    <example correction="magandang araw">maganda <marker>na</marker> araw</example>
+    <example>magandang araw</example>
+</rule>
+
+<rule id="LIGATURE_NA_N_END" name="Incorrect 'na' after /n/ ending word" lang="tl">
+    <pattern>
+        <token regexp="yes">.*n</token>
+        <token>na</token>
+        <token postag="NN"/>
+    </pattern>
+    <message>fix words like 'bayan na ' to bayang </message>
+    <suggestion>\1g \3</suggestion>
+    <example correction="bayang bayani">bayan <marker>na</marker> bayani</example>
+    <example>bayang bayani</example>
+</rule>
