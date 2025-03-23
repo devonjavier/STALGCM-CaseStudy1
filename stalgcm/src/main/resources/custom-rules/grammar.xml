@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules lang="tl">
+
+    <rule id="REPEATED_AT" name="Repeated 'at'">
+        <pattern>
+            <token>at</token>
+            <token>at</token>
+        </pattern>
+        <message>Ulit-ulit ang salitang 'at'.</message>
+        <example correction="at">Siya ay nagpunta <marker>at at</marker> nagtrabaho.</example>
+    </rule>
+
+</rules>
