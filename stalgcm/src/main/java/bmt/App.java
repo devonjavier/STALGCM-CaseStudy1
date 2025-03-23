@@ -23,12 +23,11 @@ public class App {
         Language lang = new Tagalog();
         JLanguageTool langTool = new JLanguageTool(lang);
 
-        //System.out.println(App.class.getClassLoader().getResource("custom-rules/grammar.xml"));
+
         try {
             File file = new File(App.class.getClassLoader().getResource("custom-rules/grammar.xml").toURI());
             PatternRuleLoader loader = new PatternRuleLoader();
-            langTool.getAllActiveRules().addAll(loader.getRules(file, lang));
-
+            loader.getRules(file, null).forEach(rule -> langTool.addRule(rule));
         } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }
