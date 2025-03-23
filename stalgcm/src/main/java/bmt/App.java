@@ -29,9 +29,7 @@ public class App {
             PatternRuleLoader loader = new PatternRuleLoader();
             langTool.getAllActiveRules().addAll(loader.getRules(file, lang));
 
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (URISyntaxException | IOException e) {
             e.printStackTrace();
         }
 
