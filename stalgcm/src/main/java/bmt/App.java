@@ -1,5 +1,8 @@
 package bmt;
 
+import java.io.File;
+import java.net.URISyntaxException;
+
 import org.languagetool.JLanguageTool;
 import org.languagetool.Language;
 import org.languagetool.language.Tagalog;
@@ -13,29 +16,44 @@ import java.util.List;
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
+
+        Language lang = new Tagalog();
+        JLanguageTool langTool = new JLanguageTool(lang);
+
+        //System.out.println(App.class.getClassLoader().getResource("custom-rules/grammar.xml"));
+        try {
+            File file = new File(App.class.getClassLoader().getResource("custom-rules/grammar.xml").toURI());
+            PatternRuleLoader loader = new PatternRuleLoader();
+            langTool.getAllActiveRules().addAll(loader.getRules(file, lang));
+
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // test exisiting rules
+
+        langTool.getAllActiveRules().forEach(rule -> {
+            System.out.println("Loaded Rule ID: " + rule.getId());
+        });
+        
+
+        String text = "Siya ay nagpunta at at nagtrabaho.";
+        System.out.println("Text being tested : " + text);
 
         try {
-            Language lang = new Tagalog();
-            JLanguageTool langTool = new JLanguageTool(lang);
-
-            String text = "Siya ay nagpunta at at nagtrabaho.";
             List<RuleMatch> matches = langTool.check(text);
 
-            Boolean entered = false;
+            boolean entered = false;
             for (RuleMatch match : matches) {
                 entered = true;
                 System.out.println("Issue at " + match.getFromPos() + "-" + match.getToPos() + ": " + match.getMessage());
             }
-
             System.out.println(entered);
-            
-            
-
         } catch (IOException e) {
             e.printStackTrace();
         }
