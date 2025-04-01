@@ -12,6 +12,8 @@ import org.languagetool.rules.patterns.PatternRuleLoader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+
+import java.util.ArrayList;
 /**
  * Hello world!
  *
@@ -34,23 +36,35 @@ public class App {
 
         // test exisiting rules
 
-        langTool.getAllActiveRules().forEach(rule -> {
-            System.out.println("Loaded Rule ID: " + rule.getId());
-        });
+        // langTool.getAllActiveRules().forEach(rule -> {
+        //     System.out.println("Loaded Rule ID: " + rule.getId());
+        // });
+        
+        // test custom rules
+
+
+        List<String> test_strings = new ArrayList<>();
+        test_strings.add("Siya ay nagpunta at at nagtrabaho."); // error #1 Repeated At
+        test_strings.add("Siya ang ang hari"); // error #2 repeated ang
+        test_strings.add("Ang mga mga kaibigan ko ay naglalaro"); // error #3 repeated mga)
+        test_strings.add("Maganda na bahay"); // error #4 ligature na wrong use case;
         
 
-        String text = "Siya ay nagpunta at at nagtrabaho.";
-        System.out.println("Text being tested : " + text);
 
         try {
-            List<RuleMatch> matches = langTool.check(text);
+            for (String text : test_strings){
+                List<RuleMatch> matches = langTool.check(text);
 
-            boolean entered = false;
-            for (RuleMatch match : matches) {
-                entered = true;
-                System.out.println("Issue at " + match.getFromPos() + "-" + match.getToPos() + ": " + match.getMessage());
+                System.out.println("Text being tested: " + text);
+                boolean entered = false;
+                for (RuleMatch match : matches) {
+                    entered = true;
+                    
+                    System.out.println("Issue at " + match.getFromPos() + "-" + match.getToPos() + ": " + match.getMessage());
+                }
+                System.out.println("Error Detected : " + entered);
             }
-            System.out.println(entered);
+           
         } catch (IOException e) {
             e.printStackTrace();
         }

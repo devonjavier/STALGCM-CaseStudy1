@@ -1,15 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rules lang="tl-PH" xmlns="http://www.languagetool.org/xml/rules">
-
-    <rule id="REPEATED_AT" name="Repeated 'at' words">
-        <category id="FILIPINO_STYLE" name="Filipino Style and Grammar"/>
+    <!-- Ligature -na -ng -g errors section-->
+    <rule id="LIGATURE_NA" name="Incorrect Use of 'na' Instead of '-ng'">
         <pattern>
-            <token>at</token>
-            <token>at</token>
+            <token postag=".*" postag_regexp="yes">\b(\p{L}+[aeiou])\b</token> 
+            <token>na</token> 
+            <token postag=".*" postag_regexp="yes">\b(\p{L}+)\b</token> 
         </pattern>
-        <message>Ulit-ulit ang salitang 'at'.</message>
-        <example correction="at">Siya ay nagpunta <marker>at at</marker> nagtrabaho.</example>
-        <example>Siya ay nagpunta at nagtrabaho.</example>
+        <message>Maling paggamit ng ligaturang 'na' "<match no="1"/>ng" imbes "<match no="1"/> na".</message>
+        <suggestion><match no="1"/>ng <match no="2"/></suggestion>
+        <example correction="magandang bahay">
+            <incorrect>maganda na bahay</incorrect>
+            <correct>magandang bahay</correct>
+        </example>
+    </rule>
+
+
+    <rule id="BETWEEN_NARIN" name="Wrong use of 'narin' when it should be corrected to 'na rin'">
+        <pattern> 
+            <token regexp="yes">narin</token>
+        </pattern>
+        <message>The words "na" and "rin" should be written separately: "na rin"</message>
+        <suggestion>na rin</suggestion>
+        <example correction="na rin">Hindi <marker>narin</marker> siguro.</example>
+        <example>Hindi na rin siguro.</example>
+    </rule>
+
+    <rule id="BETWEEN_PARIN" name="Wrong use of 'narin' when it should be corrected to 'na rin'">
+        <pattern>
+            <token regexp="yes">parin</token>
+        </pattern>
+        <message>The words "pa" and "rin" should be written separately: "pa rin"</message>
+        <suggestion>pa rin</suggestion>
+        <example correction="pa rin">Hindi <marker>parin</marker> siguro.</example>
+        <example>Hindi pa rin siguro.</example>
+    </rule>
+
+    <rule id="BETWEEN_PALANG" name="Wrong use of 'narin' when it should be corrected to 'na rin'">
+        <pattern>
+            <token regexp="yes">palang</token>
+        </pattern>
+        <message>The words "pa" and "lang" should be written separately: "pa lang"</message>
+        <suggestion>pa lang</suggestion>
+        <example correction="pa lang">Nandito <marker>palang</marker> ako sa LRT.</example>
+        <example>Nandito pa lang ako sa LRT.</example>
+    </rule>
+
+    <rule id="BETWEEN_NALANG" name="Wrong use of 'narin' when it should be corrected to 'na rin'">
+        <pattern>
+            <token regexp="yes">nalang</token>
+        </pattern>
+        <message>The words "na" and "lang" should be written separately: "na lang"</message>
+        <suggestion>na lang</suggestion>
+        <example correction="na lang">Dito <marker>nalang</marker> ako.</example>
+        <example>Dito na lang ako.</example>
+    </rule>
+
+    <rule id="BETWEEN_NANAMAN" name="Wrong use of 'narin' when it should be corrected to 'na rin'">
+        <pattern>
+            <token regexp="yes">nanaman</token>
+        </pattern>
+        <message>The words "na" and "naman" should be written separately: "na naman"</message>
+        <suggestion>na naman</suggestion>
+        <example correction="na naman">Nandyan ka <marker>nanaman</marker>?</example>
+        <example>Nandyan ka na naman?</example>
+    </rule>
+
+
+
+    <rule id="REPEATED_KA" name="Repeated 'ka'">
+        <pattern>
+            <token postag=".*" postag_regexp="yes">\b(kaka\p{L})\b</token> 
+        </pattern>
+        <message>Maling pag-ulit ng 'ka' inuulit ang root word</message>
+        <suggestion>Kakagising</suggestion>
+        <example correction="magandang bahay">
+            <incorrect>Kakagising</incorrect>
+            <correct>Kagigising</correct>
+        </example>
     </rule>
 
 </rules>
