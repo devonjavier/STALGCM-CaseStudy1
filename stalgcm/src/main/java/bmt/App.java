@@ -25,6 +25,8 @@ public class App {
         Language lang = new Tagalog();
         JLanguageTool langTool = new JLanguageTool(lang);
 
+   
+
 
         try {
             File file = new File(App.class.getClassLoader().getResource("custom-rules/grammar.xml").toURI());
@@ -34,22 +36,45 @@ public class App {
             e.printStackTrace();
         }
 
-        // test exisiting rules
-
-        // langTool.getAllActiveRules().forEach(rule -> {
-        //     System.out.println("Loaded Rule ID: " + rule.getId());
-        // });
-        
-        // test custom rules
-
-
+        try{
+            File file = new File(App.class.getClassLoader().getResource("custom-rules/grammar.xml").toURI());
+            if (!file.exists()) {
+                System.out.println("ERROR: grammar.xml file not found at expected location.");
+            } else {
+                System.out.println("Successfully found grammar.xml at: " + file.getAbsolutePath());
+            }
+        } catch (URISyntaxException e) {
+            System.out.println("ERROR: Unable to access grammar.xml file.");
+            e.printStackTrace();
+        }
+    
+    
         List<String> test_strings = new ArrayList<>();
-        test_strings.add("Siya ay nagpunta at at nagtrabaho."); // error #1 Repeated At
-        test_strings.add("Siya ang ang hari"); // error #2 repeated ang
-        test_strings.add("Ang mga mga kaibigan ko ay naglalaro"); // error #3 repeated mga)
-        test_strings.add("Maganda na bahay"); // error #4 ligature na wrong use case;
+
+        // -ng vs na test
+        test_strings.add("Doon sila sa malaki na bahay.");
+        test_strings.add("Binigyan mo siya ng mabango na bulaklak?");
+        test_strings.add("Nagkaroon ng magulo na usapan tungkol sa paksa.");
+        test_strings.add("Doon na lang tayo sa nagbebenta ng mura na bilhin.");
+        test_strings.add("Huwag tayo sa mahaba na pila.");
         
 
+        // between errors test
+
+        // nalang
+        test_strings.add("Huwag nalang tayo magkita.");
+
+        // parin
+        test_strings.add("Hindi parin ako nakarating diyan.");
+        
+        // repeated_ka test
+        test_strings.add("Kakabili lang namin ng bagong kotse.");
+        test_strings.add("Kakagawa ko lang ng assignment ko bago ka dumating.");
+        test_strings.add("Kakapalit ko lang ng damit ko.");
+        test_strings.add("Basa pa ang lababo dahil kakahugas ko lang ng pinggan.");
+        test_strings.add("Kakauwi pa lang nila galing probinsya.");
+
+        langTool.disableRule("MORFOLOGIK_RULE_TL"); // to see clearly which of the rules added are correct
 
         try {
             for (String text : test_strings){
@@ -59,10 +84,12 @@ public class App {
                 boolean entered = false;
                 for (RuleMatch match : matches) {
                     entered = true;
+                    System.out.println(" -- Rule ID: " + match.getRule().getId());
+                    System.out.println(" -- Issue at " + match.getFromPos() + "-" + match.getToPos() + ": " + match.getMessage());
                     
-                    System.out.println("Issue at " + match.getFromPos() + "-" + match.getToPos() + ": " + match.getMessage());
                 }
                 System.out.println("Error Detected : " + entered);
+                System.out.println();
             }
            
         } catch (IOException e) {
