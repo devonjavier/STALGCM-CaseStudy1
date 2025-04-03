@@ -12,24 +12,17 @@ import org.languagetool.rules.RuleMatch;
 import org.languagetool.rules.patterns.PatternRuleLoader;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.List;
 
 import java.util.ArrayList;
-/**
- * Hello world!
- *
- */
+
 public class App {
     public static void main(String[] args) {
         System.out.println("Hello World!");
 
         Language lang = new Tagalog();
         JLanguageTool langTool = new JLanguageTool(lang);
-
-   
-
 
         try {
             File file = new File(App.class.getClassLoader().getResource("custom-rules/grammar.xml").toURI());
