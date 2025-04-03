@@ -1,0 +1,108 @@
+Text being tested: Doon sila sa malaki na bahay.
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 13-28: Maling paggamit ng 'na'. Dapat ay "malaking bahay".
+ -- Suggested correction: [malaking bahay]
+Error Detected : true
+
+Text being tested: Binigyan mo siya ng mabango na bulaklak?
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 20-39: Maling paggamit ng 'na'. Dapat ay "mabangong bulaklak".
+ -- Suggested correction: [mabangong bulaklak]
+Error Detected : true
+
+Text being tested: Nagkaroon ng magulo na usapan tungkol sa paksa.
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 13-29: Maling paggamit ng 'na'. Dapat ay "magulong usapan".
+ -- Suggested correction: [magulong usapan]
+Error Detected : true
+
+Text being tested: Doon na lang tayo sa nagbebenta ng mura na bilhin.
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 35-49: Maling paggamit ng 'na'. Dapat ay "murang bilhin".
+ -- Suggested correction: [murang bilhin]
+Error Detected : true
+
+Text being tested: Huwag tayo sa mahaba na pila.
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 14-28: Maling paggamit ng 'na'. Dapat ay "mahabang pila".
+ -- Suggested correction: [mahabang pila]
+Error Detected : true
+
+Text being tested: Huwag nalang tayo magkita.
+ -- Rule ID: BETWEEN_NALANG
+ -- Issue at 6-12: Ang mga salitang "na" at "lang" ay dapat magkahiwalay: "na lang"
+ -- Suggested correction: [na lang]
+Error Detected : true
+
+Text being tested: Hindi parin ako nakarating diyan.
+ -- Rule ID: BETWEEN_PARIN
+ -- Issue at 6-11: Ang mga salitang "pa" at "rin" ay dapat magkahiwalay: "pa rin"
+ -- Suggested correction: [pa rin]
+Error Detected : true
+
+Text being tested: Kakabili lang namin ng bagong kotse.
+ -- Rule ID: REPEATED_KA
+ -- Issue at 0-8: Maling pag-ulit ng 'ka' sa "Kakabili". Inuulit dapat ang root word.
+ -- Suggested correction: []
+Error Detected : true
+
+Text being tested: Kakagawa ko lang ng assignment ko bago ka dumating.
+ -- Rule ID: REPEATED_KA
+ -- Issue at 0-8: Maling pag-ulit ng 'ka' sa "Kakagawa". Inuulit dapat ang root word.
+ -- Suggested correction: []
+Error Detected : true
+
+Text being tested: Kakapalit ko lang ng damit ko.
+ -- Rule ID: REPEATED_KA
+ -- Issue at 0-9: Maling pag-ulit ng 'ka' sa "Kakapalit". Inuulit dapat ang root word.
+ -- Suggested correction: []
+Error Detected : true
+
+Text being tested: Basa pa ang lababo dahil kakahugas ko lang ng pinggan.
+ -- Rule ID: REPEATED_KA
+ -- Issue at 25-34: Maling pag-ulit ng 'ka' sa "kakahugas". Inuulit dapat ang root word.
+ -- Suggested correction: []
+Error Detected : true
+
+Text being tested: Kakauwi pa lang nila galing probinsya.
+ -- Rule ID: REPEATED_KA
+ -- Issue at 0-7: Maling pag-ulit ng 'ka' sa "Kakauwi". Inuulit dapat ang root word.
+ -- Suggested correction: []
+Error Detected : true
+
+Text being tested: Ikaw ba ay ang aking kontakt para sa araw na ito?
+ -- Rule ID: KT_CT
+ -- Issue at 21-28: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
+ -- Suggested correction: []
+Error Detected : true
+
+Text being tested: Iyan ang korekt na sagot sa tanong.
+ -- Rule ID: KT_CT
+ -- Issue at 9-15: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
+ -- Suggested correction: []
+Error Detected : true
+
+Text being tested: Hindi ako adikt sa droga!
+ -- Rule ID: KT_CT
+ -- Issue at 10-15: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
+ -- Suggested correction: []
+Error Detected : true
+
+Text being tested: Naisulat mo na ba ang ating abstrakt?
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 9-17: Maling paggamit ng 'na'. Dapat ay "mong ba".
+ -- Suggested correction: [mong ba]
+ -- Rule ID: KT_CT
+ -- Issue at 28-36: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
+ -- Suggested correction: []
+Error Detected : true
+
+Text being tested: Ilagay mo lang ang iyong signatura dito sa kontrakt
+ -- Rule ID: D_WORDS
+ -- Issue at 35-39:  Do you mean <suggestion>rito</suggestion>? If the preceding word ends with a vowel, dito should start with the letter R.
+ -- Suggested correction: [rito]
+ -- Rule ID: KT_CT
+ -- Issue at 43-51: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
+ -- Suggested correction: []
+Error Detected : true
+

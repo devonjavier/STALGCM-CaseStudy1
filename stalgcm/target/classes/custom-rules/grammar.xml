@@ -31,7 +31,7 @@
             <pattern> 
                 <token regexp="yes">narin</token>
             </pattern>
-            <message>The words "na" and "rin" should be written separately: "na rin"</message>
+            <message>Ang mga salitang "na" at "rin" ay dapat magkahiwalay: "na rin"</message>
             <suggestion>na rin</suggestion>
             <example correction="na rin">Hindi <marker>narin</marker> siguro.</example>
             <example>Hindi na rin siguro.</example>
@@ -41,7 +41,7 @@
             <pattern>
                 <token regexp="yes">parin</token>
             </pattern>
-            <message>The words "pa" and "rin" should be written separately: "pa rin"</message>
+            <message>Ang mga salitang "pa" at "rin" ay dapat magkahiwalay: "pa rin"</message>
             <suggestion>pa rin</suggestion>
             <example correction="pa rin">Hindi <marker>parin</marker> siguro.</example>
             <example>Hindi pa rin siguro.</example>
@@ -51,7 +51,7 @@
             <pattern>
                 <token regexp="yes">palang</token>
             </pattern>
-            <message>The words "pa" and "lang" should be written separately: "pa lang"</message>
+            <message>Ang mga salitang "pa" at "lang" ay dapat magkahiwalay: "pa lang"</message>
             <suggestion>pa lang</suggestion>
             <example correction="pa lang">Nandito <marker>palang</marker> ako sa LRT.</example>
             <example>Nandito pa lang ako sa LRT.</example>
@@ -61,7 +61,7 @@
             <pattern>
                 <token regexp="yes">nalang</token>
             </pattern>
-            <message>The words "na" and "lang" should be written separately: "na lang"</message>
+            <message>Ang mga salitang "na" at "lang" ay dapat magkahiwalay: "na lang"</message>
             <suggestion>na lang</suggestion>
             <example correction="na lang">Dito <marker>nalang</marker> ako.</example>
             <example>Dito na lang ako.</example>
@@ -71,7 +71,7 @@
             <pattern>
                 <token regexp="yes">nanaman</token>
             </pattern>
-            <message>The words "na" and "naman" should be written separately: "na naman"</message>
+            <message>Ang mga salitang "na" at "naman" ay dapat magkahiwalay: "na naman"</message>
             <suggestion>na naman</suggestion>
             <example correction="na naman">Nandyan ka <marker>nanaman</marker>?</example>
             <example>Nandyan ka na naman?</example>
@@ -84,12 +84,24 @@
             <pattern>
                 <token regexp="yes">\b(kaka\p{L}+)\b</token>
             </pattern>
-            <message>Maling pag-ulit ng 'ka' inuulit ang root word</message>
-            <suggestion>Kakagising</suggestion>
+            <message>Maling pag-ulit ng 'ka' sa "<match no="1"/>". Inuulit dapat ang root word.</message>
+            <suggestion></suggestion>
             <example correction="magandang bahay">
                 <incorrect>Kakagising</incorrect>
                 <correct>Kagigising</correct>
             </example>
+        </rule>
+    </category>
+
+    <category id="KT_CT_ERROR" name="KT_CT_ERROR">
+        <rule id="KT_CT" name="KT-CT Error">
+            <pattern>
+                <token regexp="yes">\b\w*(kt|ct)\b</token>
+            </pattern>
+            <message>Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.</message>
+            <suggestion></suggestion>
+            <example correction="kt">Hindi <marker>kt</marker> ako.</example>
+            <example>Hindi ako korekt.</example>
         </rule>
     </category>
 

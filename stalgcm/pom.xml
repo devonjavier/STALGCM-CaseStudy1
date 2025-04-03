@@ -47,6 +47,7 @@
   </dependencies>
 
   <build>
+    <finalName>STALGCM_CaseStudy</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -96,6 +97,38 @@
             <mainClass>bmt.App</mainClass>
           </configuration>
       </plugin>
+
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-shade-plugin</artifactId>
+          <version>3.4.1</version>
+          <executions>
+              <execution>
+                  <phase>package</phase>
+                  <goals>
+                      <goal>shade</goal>
+                  </goals>
+                  <configuration>
+                      <createDependencyReducedPom>false</createDependencyReducedPom>
+                      <artifactSet>
+                          <includes>
+                              <include>org.languagetool:languagetool-core</include>
+                              <include>org.languagetool:language-tl</include>
+                              <include>org.slf4j:slf4j-simple</include>
+                          </includes>
+                      </artifactSet>
+                      <transformers>
+                          <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                              <mainClass>bmt.App</mainClass> 
+                          </transformer>
+                      </transformers>
+                  </configuration>
+              </execution>
+          </executions>
+      </plugin>
+
+
+
       </plugins>
     </pluginManagement>
   </build>
