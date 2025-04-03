@@ -85,7 +85,7 @@
                 <token regexp="yes">\b(kaka\p{L}+)\b</token>
             </pattern>
             <message>Maling pag-ulit ng 'ka' sa "<match no="1"/>". Inuulit dapat ang root word.</message>
-            <suggestion></suggestion>
+            <suggestion>Repeat the root word syllable instead of 'ka'</suggestion>
             <example correction="magandang bahay">
                 <incorrect>Kakagising</incorrect>
                 <correct>Kagigising</correct>
@@ -96,13 +96,19 @@
     <category id="KT_CT_ERROR" name="KT_CT_ERROR">
         <rule id="KT_CT" name="KT-CT Error">
             <pattern>
-                <token regexp="yes">\b\w*(kt|ct)\b</token>
+                <token regexp="yes">\b(\w+?)(k|c)t\b</token>
             </pattern>
             <message>Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.</message>
-            <suggestion></suggestion>
-            <example correction="kt">Hindi <marker>kt</marker> ako.</example>
-            <example>Hindi ako korekt.</example>
+            <suggestion>Remove t beside the k or c</suggestion>
+            <example correction="kontak">Ikaw ba ay ang aking <marker>kontakt</marker> para sa araw na ito?</example>
+            <example correction="korek">Iyan ang <marker>korekt</marker> na sagot sa tanong.</example>
+            <example correction="adik">Hindi ako <marker>adikt</marker> sa droga!</example>
+            <example correction="abstrak">Naisulat mo ba ang ating <marker>abstrakt</marker>?</example>
         </rule>
+
+
+
+
     </category>
 
 </rules>

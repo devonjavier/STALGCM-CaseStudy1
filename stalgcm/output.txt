@@ -28,73 +28,235 @@ Text being tested: Huwag tayo sa mahaba na pila.
  -- Suggested correction: [mahabang pila]
 Error Detected : true
 
-Text being tested: Huwag nalang tayo magkita.
- -- Rule ID: BETWEEN_NALANG
- -- Issue at 6-12: Ang mga salitang "na" at "lang" ay dapat magkahiwalay: "na lang"
- -- Suggested correction: [na lang]
+Text being tested: Dumating narin si Tatay mula sa trabaho.
+ -- Rule ID: BETWEEN_NARIN
+ -- Issue at 9-14: Ang mga salitang "na" at "rin" ay dapat magkahiwalay: "na rin"
+ -- Suggested correction: [na rin]
 Error Detected : true
 
-Text being tested: Hindi parin ako nakarating diyan.
+Text being tested: Kumain narin kami bago umalis.
+ -- Rule ID: BETWEEN_NARIN
+ -- Issue at 7-12: Ang mga salitang "na" at "rin" ay dapat magkahiwalay: "na rin"
+ -- Suggested correction: [na rin]
+Error Detected : true
+
+Text being tested: Tapos narin ang proyekto natin para bukas.
+ -- Rule ID: BETWEEN_NARIN
+ -- Issue at 6-11: Ang mga salitang "na" at "rin" ay dapat magkahiwalay: "na rin"
+ -- Suggested correction: [na rin]
+Error Detected : true
+
+Text being tested: Pwede narin tayong umuwi dahil wala nang gagawin.
+ -- Rule ID: BETWEEN_NARIN
+ -- Issue at 6-11: Ang mga salitang "na" at "rin" ay dapat magkahiwalay: "na rin"
+ -- Suggested correction: [na rin]
+Error Detected : true
+
+Text being tested: Nandito narin ang iba nating kaibigan.
+ -- Rule ID: BETWEEN_NARIN
+ -- Issue at 8-13: Ang mga salitang "na" at "rin" ay dapat magkahiwalay: "na rin"
+ -- Suggested correction: [na rin]
+Error Detected : true
+
+Text being tested: Hindi parin niya sinasagot ang tawag ko.
  -- Rule ID: BETWEEN_PARIN
  -- Issue at 6-11: Ang mga salitang "pa" at "rin" ay dapat magkahiwalay: "pa rin"
  -- Suggested correction: [pa rin]
 Error Detected : true
 
+Text being tested: Ang lakas parin ng ulan!
+ -- Rule ID: BETWEEN_PARIN
+ -- Issue at 10-15: Ang mga salitang "pa" at "rin" ay dapat magkahiwalay: "pa rin"
+ -- Suggested correction: [pa rin]
+Error Detected : true
+
+Text being tested: Hinihintay ko parin sagot mo.
+ -- Rule ID: BETWEEN_PARIN
+ -- Issue at 14-19: Ang mga salitang "pa" at "rin" ay dapat magkahiwalay: "pa rin"
+ -- Suggested correction: [pa rin]
+Error Detected : true
+
+Text being tested: Sarap parin ng luto ni lola!
+ -- Rule ID: BETWEEN_PARIN
+ -- Issue at 6-11: Ang mga salitang "pa" at "rin" ay dapat magkahiwalay: "pa rin"
+ -- Suggested correction: [pa rin]
+ -- Rule ID: NI_COMMON_NOUN
+ -- Issue at 20-27: Do you mean <suggestion>ng lola</suggestion>? "ni" is a personal name marker.
+ -- Suggested correction: [ng lola]
+Error Detected : true
+
+Text being tested: Iniisip parin kita araw-araw.
+ -- Rule ID: BETWEEN_PARIN
+ -- Issue at 8-13: Ang mga salitang "pa" at "rin" ay dapat magkahiwalay: "pa rin"
+ -- Suggested correction: [pa rin]
+Error Detected : true
+
+Text being tested: Wag nalang natin ituloy ang plano, baka umulan pa.
+ -- Rule ID: BETWEEN_NALANG
+ -- Issue at 4-10: Ang mga salitang "na" at "lang" ay dapat magkahiwalay: "na lang"
+ -- Suggested correction: [na lang]
+Error Detected : true
+
+Text being tested: Tulog ka nalang, mamaya na lang tayo mag-usap.
+ -- Rule ID: BETWEEN_NALANG
+ -- Issue at 9-15: Ang mga salitang "na" at "lang" ay dapat magkahiwalay: "na lang"
+ -- Suggested correction: [na lang]
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 17-31: Maling paggamit ng 'na'. Dapat ay "mamayang lang".
+ -- Suggested correction: [mamayang lang]
+Error Detected : true
+
+Text being tested: Puwede bang ikaw nalang ang bumili ng pagkain?
+ -- Rule ID: BETWEEN_NALANG
+ -- Issue at 17-23: Ang mga salitang "na" at "lang" ay dapat magkahiwalay: "na lang"
+ -- Suggested correction: [na lang]
+Error Detected : true
+
+Text being tested: Huwag nalang tayo mag-away, masyado nang mainit ulo ko.
+ -- Rule ID: BETWEEN_NALANG
+ -- Issue at 6-12: Ang mga salitang "na" at "lang" ay dapat magkahiwalay: "na lang"
+ -- Suggested correction: [na lang]
+ -- Rule ID: ADJECTIVE-C_COMMON_NOUN
+ -- Issue at 41-51: Do you mean <suggestion>mainit na ulo</suggestion>? If the adjective ends with a consonant, except the letter N, the ligature "na" should be added.
+ -- Suggested correction: [mainit na ulo]
+Error Detected : true
+
+Text being tested: Hingi nalang tayo ng ekstensyon para sa deadline upang may oras pa tayo.
+ -- Rule ID: BETWEEN_NALANG
+ -- Issue at 6-12: Ang mga salitang "na" at "lang" ay dapat magkahiwalay: "na lang"
+ -- Suggested correction: [na lang]
+Error Detected : true
+
+Text being tested: Dito palang kami sa Quirino station.
+ -- Rule ID: BETWEEN_PALANG
+ -- Issue at 5-11: Ang mga salitang "pa" at "lang" ay dapat magkahiwalay: "pa lang"
+ -- Suggested correction: [pa lang]
+Error Detected : true
+
+Text being tested: Kakagising mo palang, pagod ka na kaagad?
+ -- Rule ID: REPEATED_KA
+ -- Issue at 0-10: Maling pag-ulit ng 'ka' sa "Kakagising". Inuulit dapat ang root word.
+ -- Suggested correction: [Repeat the root word syllable instead of 'ka']
+ -- Rule ID: BETWEEN_PALANG
+ -- Issue at 14-20: Ang mga salitang "pa" at "lang" ay dapat magkahiwalay: "pa lang"
+ -- Suggested correction: [pa lang]
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 28-40: Maling paggamit ng 'na'. Dapat ay "kang kaagad".
+ -- Suggested correction: [kang kaagad]
+Error Detected : true
+
+Text being tested: Ngayon ko palang natikman ang ganitong klaseng tamis na mangga!
+ -- Rule ID: BETWEEN_PALANG
+ -- Issue at 10-16: Ang mga salitang "pa" at "lang" ay dapat magkahiwalay: "pa lang"
+ -- Suggested correction: [pa lang]
+Error Detected : true
+
+Text being tested: Sobrang saya ko, ikaw palang ang unang tao na nagbigay sa akin ng ganitong regalo.
+ -- Rule ID: BETWEEN_PALANG
+ -- Issue at 22-28: Ang mga salitang "pa" at "lang" ay dapat magkahiwalay: "pa lang"
+ -- Suggested correction: [pa lang]
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 39-54: Maling paggamit ng 'na'. Dapat ay "taong nagbigay".
+ -- Suggested correction: [taong nagbigay]
+Error Detected : true
+
+Text being tested: Alam mo ba na parating palang ang bagyo?
+ -- Rule ID: LIGATURE_NA
+ -- Issue at 8-22: Maling paggamit ng 'na'. Dapat ay "bang parating".
+ -- Suggested correction: [bang parating]
+ -- Rule ID: BETWEEN_PALANG
+ -- Issue at 23-29: Ang mga salitang "pa" at "lang" ay dapat magkahiwalay: "pa lang"
+ -- Suggested correction: [pa lang]
+Error Detected : true
+
+Text being tested: nanaman
+ -- Rule ID: BETWEEN_NANAMAN
+ -- Issue at 0-7: Ang mga salitang "na" at "naman" ay dapat magkahiwalay: "na naman"
+ -- Suggested correction: [na naman]
+Error Detected : true
+
+Text being tested: Dito nanaman tayo.
+ -- Rule ID: BETWEEN_NANAMAN
+ -- Issue at 5-12: Ang mga salitang "na" at "naman" ay dapat magkahiwalay: "na naman"
+ -- Suggested correction: [na naman]
+Error Detected : true
+
+Text being tested: Nahihilo nanaman ako.
+ -- Rule ID: BETWEEN_NANAMAN
+ -- Issue at 9-16: Ang mga salitang "na" at "naman" ay dapat magkahiwalay: "na naman"
+ -- Suggested correction: [na naman]
+Error Detected : true
+
+Text being tested: May assignment nanaman tayo?
+ -- Rule ID: BETWEEN_NANAMAN
+ -- Issue at 15-22: Ang mga salitang "na" at "naman" ay dapat magkahiwalay: "na naman"
+ -- Suggested correction: [na naman]
+Error Detected : true
+
+Text being tested: Bakit umiinom ka nanaman?!
+ -- Rule ID: BETWEEN_NANAMAN
+ -- Issue at 17-24: Ang mga salitang "na" at "naman" ay dapat magkahiwalay: "na naman"
+ -- Suggested correction: [na naman]
+Error Detected : true
+
+Text being tested: Ikaw at ako, nandito nanaman tayo.
+ -- Rule ID: BETWEEN_NANAMAN
+ -- Issue at 21-28: Ang mga salitang "na" at "naman" ay dapat magkahiwalay: "na naman"
+ -- Suggested correction: [na naman]
+Error Detected : true
+
 Text being tested: Kakabili lang namin ng bagong kotse.
  -- Rule ID: REPEATED_KA
  -- Issue at 0-8: Maling pag-ulit ng 'ka' sa "Kakabili". Inuulit dapat ang root word.
- -- Suggested correction: []
+ -- Suggested correction: [Repeat the root word syllable instead of 'ka']
 Error Detected : true
 
 Text being tested: Kakagawa ko lang ng assignment ko bago ka dumating.
  -- Rule ID: REPEATED_KA
  -- Issue at 0-8: Maling pag-ulit ng 'ka' sa "Kakagawa". Inuulit dapat ang root word.
- -- Suggested correction: []
+ -- Suggested correction: [Repeat the root word syllable instead of 'ka']
 Error Detected : true
 
 Text being tested: Kakapalit ko lang ng damit ko.
  -- Rule ID: REPEATED_KA
  -- Issue at 0-9: Maling pag-ulit ng 'ka' sa "Kakapalit". Inuulit dapat ang root word.
- -- Suggested correction: []
+ -- Suggested correction: [Repeat the root word syllable instead of 'ka']
 Error Detected : true
 
 Text being tested: Basa pa ang lababo dahil kakahugas ko lang ng pinggan.
  -- Rule ID: REPEATED_KA
  -- Issue at 25-34: Maling pag-ulit ng 'ka' sa "kakahugas". Inuulit dapat ang root word.
- -- Suggested correction: []
+ -- Suggested correction: [Repeat the root word syllable instead of 'ka']
 Error Detected : true
 
 Text being tested: Kakauwi pa lang nila galing probinsya.
  -- Rule ID: REPEATED_KA
  -- Issue at 0-7: Maling pag-ulit ng 'ka' sa "Kakauwi". Inuulit dapat ang root word.
- -- Suggested correction: []
+ -- Suggested correction: [Repeat the root word syllable instead of 'ka']
 Error Detected : true
 
 Text being tested: Ikaw ba ay ang aking kontakt para sa araw na ito?
  -- Rule ID: KT_CT
  -- Issue at 21-28: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
- -- Suggested correction: []
+ -- Suggested correction: [Remove t beside the k or c]
 Error Detected : true
 
 Text being tested: Iyan ang korekt na sagot sa tanong.
  -- Rule ID: KT_CT
  -- Issue at 9-15: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
- -- Suggested correction: []
+ -- Suggested correction: [Remove t beside the k or c]
 Error Detected : true
 
 Text being tested: Hindi ako adikt sa droga!
  -- Rule ID: KT_CT
  -- Issue at 10-15: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
- -- Suggested correction: []
+ -- Suggested correction: [Remove t beside the k or c]
 Error Detected : true
 
-Text being tested: Naisulat mo na ba ang ating abstrakt?
- -- Rule ID: LIGATURE_NA
- -- Issue at 9-17: Maling paggamit ng 'na'. Dapat ay "mong ba".
- -- Suggested correction: [mong ba]
+Text being tested: Naisulat mo ba ang ating abstrakt?
  -- Rule ID: KT_CT
- -- Issue at 28-36: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
- -- Suggested correction: []
+ -- Issue at 25-33: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
+ -- Suggested correction: [Remove t beside the k or c]
 Error Detected : true
 
 Text being tested: Ilagay mo lang ang iyong signatura dito sa kontrakt
@@ -103,6 +265,6 @@ Text being tested: Ilagay mo lang ang iyong signatura dito sa kontrakt
  -- Suggested correction: [rito]
  -- Rule ID: KT_CT
  -- Issue at 43-51: Sa isang patnig ay hindi pinatutunog ang T sa KT sa isang patnig, kaya't dapat k lang ito.
- -- Suggested correction: []
+ -- Suggested correction: [Remove t beside the k or c]
 Error Detected : true
 

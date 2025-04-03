@@ -57,11 +57,42 @@ public class App {
 
         // between errors test
 
-        // nalang
-        test_strings.add("Huwag nalang tayo magkita.");
+        // narin
+        test_strings.add("Dumating narin si Tatay mula sa trabaho.");
+        test_strings.add("Kumain narin kami bago umalis.");
+        test_strings.add("Tapos narin ang proyekto natin para bukas.");
+        test_strings.add("Pwede narin tayong umuwi dahil wala nang gagawin.");
+        test_strings.add("Nandito narin ang iba nating kaibigan.");
 
         // parin
-        test_strings.add("Hindi parin ako nakarating diyan.");
+        test_strings.add("Hindi parin niya sinasagot ang tawag ko.");
+        test_strings.add("Ang lakas parin ng ulan!");
+        test_strings.add("Hinihintay ko parin sagot mo.");
+        test_strings.add("Sarap parin ng luto ni lola!");
+        test_strings.add("Iniisip parin kita araw-araw.");
+
+        // nalang
+        test_strings.add("Wag nalang natin ituloy ang plano, baka umulan pa.");
+        test_strings.add("Tulog ka nalang, mamaya na lang tayo mag-usap.");
+        test_strings.add("Puwede bang ikaw nalang ang bumili ng pagkain?");
+        test_strings.add("Huwag nalang tayo mag-away, masyado nang mainit ulo ko.");
+        test_strings.add("Hingi nalang tayo ng ekstensyon para sa deadline upang may oras pa tayo.");
+;
+
+        // palang
+        test_strings.add("Dito palang kami sa Quirino station.");
+        test_strings.add("Kakagising mo palang, pagod ka na kaagad?");
+        test_strings.add("Ngayon ko palang natikman ang ganitong klaseng tamis na mangga!");
+        test_strings.add("Sobrang saya ko, ikaw palang ang unang tao na nagbigay sa akin ng ganitong regalo.");
+        test_strings.add("Alam mo ba na parating palang ang bagyo?");
+        
+        // nanaman
+        test_strings.add("nanaman");
+        test_strings.add("Dito nanaman tayo.");
+        test_strings.add("Nahihilo nanaman ako.");
+        test_strings.add("May assignment nanaman tayo?");
+        test_strings.add("Bakit umiinom ka nanaman?!");
+        test_strings.add("Ikaw at ako, nandito nanaman tayo.");
         
         // repeated_ka test
         test_strings.add("Kakabili lang namin ng bagong kotse.");
@@ -74,7 +105,7 @@ public class App {
         test_strings.add("Ikaw ba ay ang aking kontakt para sa araw na ito?");
         test_strings.add("Iyan ang korekt na sagot sa tanong.");
         test_strings.add("Hindi ako adikt sa droga!");
-        test_strings.add("Naisulat mo na ba ang ating abstrakt?");
+        test_strings.add("Naisulat mo ba ang ating abstrakt?");
         test_strings.add("Ilagay mo lang ang iyong signatura dito sa kontrakt");
 
         langTool.disableRule("MORFOLOGIK_RULE_TL"); // to see clearly which of the rules added are correct 
